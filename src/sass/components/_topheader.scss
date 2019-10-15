@@ -1,0 +1,45 @@
+
+
+.topheader{
+
+      display: inline-flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      padding-top: 1.5rem ;       
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #8c8c8c24;
+      width: 75%;
+
+      &__searchBar{
+        
+            display: -webkit-flex;
+            display: flex;
+            border-radius: 5rem;
+            width: 30rem;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: .6rem;
+            border: 1px solid #c9d1d7;
+            box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.2);
+            outline: 2rem blue;
+            &-inp{
+                border: none  ; 
+                flex: 1  ;
+                &:focus{ 
+                    outline: none ;
+                }
+            }
+
+            &-icon{
+                cursor: pointer ; 
+                color: $color-font  ;
+            } 
+      }
+
+      &__logoArea{
+    
+      }
+}

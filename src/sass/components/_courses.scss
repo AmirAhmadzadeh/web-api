@@ -1,0 +1,196 @@
+
+
+
+.courses{ 
+    transform: translateY(45rem);
+    padding-top: 10rem;
+
+    &__item{
+        
+        max-height: 40rem;
+        box-shadow: 0 2px 4.5px rgba(#d70d59,.1) ; 
+        overflow: hidden;
+        position: relative;
+        transition: all .1s ;
+        border-radius: 20% ;   
+        margin-bottom: 2.5rem; 
+        &:hover{
+            cursor: pointer ;
+            box-shadow: 0 1rem 8.5px rgba(#d70d59,.1) ;
+            transform: translateY(-.1rem);
+        }
+
+        &-image{
+            width: 100%;
+            height: 70%;
+        }
+
+        &-boxColor{
+            width: 100%;
+            height: 70%;
+            position: absolute ;
+            opacity: .3;
+            background: linear-gradient(324deg, #d70d59 0%, #fc3924 100%);
+        }
+    }
+
+
+    &__details{ 
+        padding: 2.5rem ;
+       
+        width: 80% ;
+        margin: 0 auto;
+        margin-top: 4rem ;
+        box-shadow: 0 1rem 4rem rgba($color-black,.15) ; 
+    }
+}
+.course{
+    &__image{
+         width: 100% ;
+         height: 100% ;
+    }  
+    &__imageContainer{
+        width: 100%;
+        height: 40rem;
+    }
+    &__title{ 
+        cursor: pointer ;
+    }
+
+    &__details{
+          button{
+              font-size: 2rem ;
+          }
+          font-size: 1.5rem ;
+          &-area{
+              padding: 2rem ;
+          }
+    }
+
+
+    &__accessInfo{
+        font-size: 2.2rem ; 
+        padding: 2rem; 
+        border-top: 2px solid #ccc;
+        button{
+             float: left;
+             span{
+                 font-size: 1.5rem;
+             }
+        }
+    }
+
+
+    &__comments{ 
+
+        padding: 0 1rem ; 
+    }
+}
+
+.comment{
+    height: 10rem;
+   
+    margin-bottom: 1rem;
+    padding-right: 1.5rem;
+    box-shadow: 0 2px 2px 3px #565454; 
+    
+    &__child{
+        margin-right: 3rem ; 
+        box-shadow: 3px 4px 2px 0px;
+
+    }
+
+    &__textValidator{ 
+         width: 50% ; 
+
+
+        
+    }
+    &__put{ 
+       
+        position: relative;
+        font-size: 1.5rem ;
+        margin-top: 8rem;
+        textArea{
+            font-size: 1.5rem; 
+        }
+        button{
+            position: absolute;
+            bottom: 0 ; 
+            margin-right: 5rem;  
+                    
+        }
+    }
+
+  
+}
+.episode{
+  
+    &__list{
+
+    }
+
+    &__listItem{
+        background-color: #eee;
+        padding: 1rem;
+        cursor: pointer;
+        position: relative;
+        //added
+        overflow: hidden;
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__counter{
+        width: 4%;
+        background-color: #ccc;
+        text-align: center;
+        border-radius: 55%;
+        padding: .5rem;
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    &__name{
+        display: inline-block
+    }
+
+    &__link{
+       color: $color-black ;     
+       &:hover,
+       &:active{
+           color : red  ;
+       }
+    }
+
+    &__type{
+        display: inline-block ; 
+        font-size: .9rem ; 
+        margin-right: 2rem ;
+        color: blue ;
+    }
+
+    &__donwloadButton{
+        float: left;
+    }
+
+
+    &__detail{
+        width: 100%  ;
+        transition: height .3s ease-in-out ; 
+        &--body{
+            padding: 3rem;
+            overflow: hidden;
+        }  
+        &--close{
+            height: 0 ; 
+            // visibility: hidden ; 
+        } 
+        &--open{
+            height:52rem ; 
+            // visibility: visible ;
+        }
+      
+    }
+}

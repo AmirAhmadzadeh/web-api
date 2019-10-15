@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1475px" height="1026px" viewBox="0 0 1475 1026" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop HD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1057.84541,-403.107629 C1107.10087,-378.383037 980.822761,-442.090234 1125.58459,-368.47307 C1270.34642,-294.855906 1298.45408,-236.669616 1291.37365,-69.5755936 C1288.13023,6.96727312 1274.05857,162.312849 1250.97336,401.3686 C1209.76361,828.110773 1304.40147,852.529137 380.783982,1017.6534 C287.465273,893.773631 18.677495,536.960214 -56.6289595,436.991556 C74.3822408,339.466998 976.952533,-339.439609 1057.84541,-403.107629 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#000000" opacity="0.899456522" transform="translate(617.871040, 306.153399) rotate(-323.000000) translate(-617.871040, -306.153399) " xlink:href="#path-1"></use>
+    </g>
+</svg>

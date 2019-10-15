@@ -1,0 +1,54 @@
+
+
+.form__controller{ 
+    padding: 1rem !important; 
+    margin-bottom: 1.5rem !important; 
+
+    // &--catSelector{
+    //     label{
+    //         right: 3.5rem !important ;
+    //         top: 1rem;
+    //         font-size: 2rem !important;
+
+    //     }
+    // }
+
+    &--label{
+       font-size: 2rem ;
+    }
+
+    &--option{ 
+
+    }
+
+    &--select{
+        font-size: 1.7rem !important  ; 
+        padding: .5rem ;
+    }
+
+    &--inp input{
+         font-size: 2.2rem ;
+    }
+    &--inp label{
+        font-size: 1.7rem   ;
+        right: 0 ;
+
+        &::focus{
+            outline: none ; 
+        }
+   }
+
+   &--button{
+       font-size: 1.2rem !important; 
+       transform: translateY(2.5rem) ;        
+       &:hover {
+           cursor: pointer !important;
+       }
+       
+       // &::disabled{
+       //    cursor: pointer  !important;
+       //    background-color: red !important ;
+       // }
+   }
+   
+}

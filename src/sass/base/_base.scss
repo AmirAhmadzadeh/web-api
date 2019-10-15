@@ -1,0 +1,53 @@
+
+*{
+   margin: 0   ;  
+   padding: 0  ;  
+   box-sizing: border-box  ; 
+   font-family: Vazir ; 
+}
+
+html{  
+  font-size: 62.5% ;    // 1rem = 10px    (10/16)*100 = 62.5%
+
+  direction: rtl ;
+
+  @include respond(land-tab){ 
+     font-size: 56.25% ;  // 1rem=9px 9/16 *100
+  } 
+
+
+  @include respond(port-tab){ 
+     font-size: 50% ;   //   1rem=8px (8/16) *100  
+  } 
+
+ 
+  @include respond(large-desktop){ 
+     font-size: 75% ;   // 1rem = 12px   
+  } 
+
+}
+
+body {
+    margin:  inherit ;
+    padding: inherit ;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden ;
+}
+
+
+a{ 
+   text-decoration:  none ; 
+}
+li{
+  list-style: none ;;
+}
+
+
+
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+}
+  

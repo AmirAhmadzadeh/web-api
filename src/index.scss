@@ -1,0 +1,31 @@
+
+
+// abstracts
+@import './sass/abstracts//variables' ; 
+@import './sass/abstracts/mixin' ; 
+@import './sass/abstracts/animation' ; 
+
+
+
+// base
+@import './sass/base/base' ;
+@import './sass/base/utilities' ;
+@import './sass/base/fonts' ;
+@import './sass/base/flex' ;
+
+
+// components 
+
+@import './sass/components/header' ;
+@import './sass/components/app' ;
+@import './sass/components/logo' ;
+@import './sass/components/navigation' ;
+@import './sass/components/topheader' ;
+@import './sass/components/courses' ;
+@import './sass/components/form' ;
+
+// containers 
+@import './sass/containers/home' ;
+@import './sass/containers/academy' ; 
+@import './sass/containers/auth'  ; 
+

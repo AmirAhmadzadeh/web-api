@@ -1,0 +1,19 @@
+
+
+@keyframes rotateLogo{
+
+    0%{
+         transform: rotate(0) 
+    }
+
+    40%{
+        transform: rotate(80deg)
+    }
+    80%{
+        transform: rotate(-10deg)
+    }
+    100%{
+        transform: rotate(0)
+
+    }
+}

@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+.row{ 
+  display: flex ;
+  justify-content: space-between ;
+  flex-wrap: wrap ; 
+  @include respond(port-tab) {
+    display: block ;    
+  }
+}
+
+.col-md-4{ 
+    flex: 0 0 31%; 
+ }
+
+
+
+ 
+
+
+
+
+
+

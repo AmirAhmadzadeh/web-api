@@ -1,0 +1,14 @@
+
+
+.logo{ 
+    font-size: 4rem ;
+    background-image: linear-gradient(324deg, #d70d59 0%, #fc3924 100%); ; 
+    // color: transparent; 
+    color: $color-white ;   
+    border-radius: 5rem ;
+    &:hover{
+        animation: rotateLogo 1s ease-out ;
+    }
+
+     
+}

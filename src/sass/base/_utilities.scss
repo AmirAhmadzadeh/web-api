@@ -1,0 +1,48 @@
+
+
+
+.button{ 
+      padding: 1rem 2.5rem !important ;
+     &__yellow{
+         background-color: $color-btn-yellow !important; 
+         &:hover{ 
+            background-color: #f0c400 !important ;
+            transition: all .3s ease;
+        }
+      } 
+
+      
+      &__transparent{
+        &:hover{ 
+            background-color:  $color-transparent !important; 
+            transition: all .3s ease;
+        } 
+      }
+      &__radios{ 
+          border-radius: 5rem !important;
+         
+      }
+     span{ 
+         font-size: 1.2rem ;
+     }
+}
+
+.heading{ 
+      &__first{ 
+            font-size: 3rem ; 
+            font-weight: 400
+      }
+
+      &__secondary{ 
+          
+      }
+}
+
+.margin_bottom_min{
+    margin-bottom: 2rem ;
+}
+
+.margin_top_mediom{
+    margin-top: 2rem ;
+
+}

@@ -1,0 +1,36 @@
+
+
+.navigation{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 75%;
+    align-items: center ;
+    &__list{ 
+         display: flex ;
+    }
+
+
+    &__link{
+        color: $color-black ;  
+        font-size: 1.4rem ;
+        font-weight: 100 ;
+        padding: 2rem 2rem 1em 2rem;
+        display: inline-block ;
+
+
+    }
+    &__authButtons--panleButton{
+        padding: 0 !important;
+        margin: 6px 8px !important;
+    }
+    
+    &__item{
+        list-style: none;
+        border-bottom: 2px solid transparent ; 
+        transition: all .4s   ;
+        
+        &:hover{
+            border-bottom: 2px  solid  $color-black ;
+        } 
+    }
+}
