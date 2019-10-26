@@ -5,23 +5,25 @@
 import React, { useEffect } from 'react'
 import { Button, FormControl, FormGroup } from '@material-ui/core';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
- 
+import useInputState from '../../hooks/useInputState' ;
+
 const Login = (props) => {
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPass] = React.useState('');
+    const [email, setEmail] = useInputState('');
+    
+    const [password, setPass] = useInputState('');
 
     
 
-    const handleEmailChange = (e) => {
+    // const handleEmailChange = (e) => {
 
-        setEmail(e.target.value);
+    //     setEmail(e.target.value);
 
-    }
+    // }
 
-    const handlePassChange = (e) => {
-        setPass(e.target.value);
-    }
+    // const handlePassChange = (e) => {
+    //     setPass(e.target.value);
+    // }
     const loginHandler = (e) => { 
         e.preventDefault()
         props.login(email , password);    
@@ -52,7 +54,7 @@ const Login = (props) => {
 
                     <TextValidator
                         label="ایمیل"
-                        onChange={handleEmailChange}
+                        onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         value={email}
                         validators={['required', 'isEmail']}
@@ -65,7 +67,7 @@ const Login = (props) => {
 
                     <TextValidator
                         label="رمز ورود"
-                        onChange={handlePassChange}
+                        onChange={(e) => setPass(e.target.value) }
                         name="پسورد"
                         value={password}
                         validators={['required', 'isPass']}

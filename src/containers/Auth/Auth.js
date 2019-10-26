@@ -1,4 +1,4 @@
-import React , { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Tabs, Tab, Typography } from '@material-ui/core';
 
@@ -8,107 +8,141 @@ import Register from './Register';
 
 import { connect } from 'react-redux';
 
-import { login, resetAuthError , registerUserToApp } from '../../store/actions/';
+import { login, resetAuthError, registerUserToApp } from '../../store/actions/';
 
 import { Redirect } from 'react-router-dom';
 
 import WithClass from '../../hoc/WithClass/WithClass';
 
+import useValue from '../../hooks/useValue';
+
 
 const Auth = (props) => {
-  const [value, setValue] = React.useState(0);
-  const [errorMessage , setErrorMessage] = React.useState(null) ; 
- 
-  function handleChange(e, value) {
-    setValue(value)
-  }
 
-  function login(email,pass) {
-    
+  const [value, setValue] = useValue(0);
+
+  const [errorMessage, setErrorMessage] = React.useState(null);
+
+  function login(email, pass) {
+
     props.onLoginForm(email, pass);
+  
   }
-  function handleGoBack() { 
-    //code 
-    props.resetAuthError() ;
+
+  function handleGoBack() {
+
+    props.resetAuthError();
+   
     props.history.push('/');
+  
   }
 
-  function register(name , email , password) { 
-
-      props.registerUser(name , email , password )
+  function register(name, email, password) {
+    
+    props.registerUser(name, email, password)
+ 
   }
 
   useEffect(() => {
-    
-      // props.resetErrorMessage() ;
-      
-      setErrorMessage(props.auth.error ? "ایمل یا پس اشتباه است " : null)
+
+    // props.resetErrorMessage() ;
+   
+    setErrorMessage(props.auth.error ? "ایمل یا پس اشتباه است " : null)
+  
   })
 
-  let tabsConetnt = null;
-  switch (value) {
-    case 0:
-      tabsConetnt = <Login login={login} goback={handleGoBack} />;
-      break;
-    case 1:
-      tabsConetnt = <Register   goback={handleGoBack} register={register} />;
-      break;
+  function getTabsContent(params) {
 
-    default:
-      break;
+    switch (value) {
+     
+      case 0:
+
+        return <Login login={login} goback={handleGoBack} />;
+
+      case 1:
+
+        return <Register goback={handleGoBack} register={register} />;
+
+
+      default:
+
+        break;
+    }
+
   }
- 
-  let content = null;
 
-  if (props.auth.user || props.auth.auth) content = <Redirect to='/' />
-  else {
-    content = (
-    <React.Fragment>
+  function getContent() {
+    if (props.auth.user || props.auth.auth) return <Redirect to='/' />
+    
+    return  (
+        
+        <React.Fragment>
       
-   
-    <WithClass classes="auth">
-        <h1> {errorMessage} </h1>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="secondary"
-          centered
-        >
-          <Tab label="ورود" className="tab" />
-          <Tab label="ثبت نام" className="tab" />
-
-        </Tabs>
-
-        <Typography>
-          {tabsConetnt}
-        </Typography>
-      </WithClass>
-
-      </React.Fragment>
-    )
-  }
+          <WithClass classes="auth">
+      
+            <h1> {errorMessage} </h1>
+      
+            <Tabs
+      
+      value={value}
+      
+      onChange={(e, value) => setValue(value)}
+      
+      indicatorColor="secondary"
+             
+      textColor="secondary"
+             
+      centered
+            >
+             
+              <Tab label="ورود" className="tab" />
+             
+              <Tab label="ثبت نام" className="tab" />
+  
+            </Tabs>
+  
+            <Typography>
+            
+              {getTabsContent()}
+           
+            </Typography>
+         
+          </WithClass>
+  
+        </React.Fragment>
+      
+      )
+ 
+    }
   return (
-
-    content
-  )
+     
+    getContent()
+  
+    )
 }
 
 
 const mapStateToProps = state => {
 
   return {
+   
     auth: state.auth
+ 
   }
 }
 
 const mapDispatchToProps = dispatch => {
 
   return {
-    onLoginForm: (email, pass) => dispatch(login(email, pass)) , 
-    resetAuthError  : () => dispatch(resetAuthError()) , 
-    registerUser : (name , email, password) => dispatch(registerUserToApp(name ,email , password ))
+   
+    onLoginForm: (email, pass) => dispatch(login(email, pass)),
+   
+    resetAuthError: () => dispatch(resetAuthError()),
+    
+    registerUser: (name, email, password) => dispatch(registerUserToApp(name, email, password))
+  
   }
+
 
 }
 

@@ -2,7 +2,9 @@
 
 
 import React from 'react';
+
 import CourseItem from './CourseItem/CourseItem';
+
 import WithClass from '../../hoc/WithClass/WithClass';
 
 

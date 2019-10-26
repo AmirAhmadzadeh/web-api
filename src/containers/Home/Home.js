@@ -11,6 +11,7 @@ import { withRouter } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 
 class Home extends Component {
+  
   state = {
     authPage: false
   }
