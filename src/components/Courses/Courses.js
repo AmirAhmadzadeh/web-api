@@ -11,7 +11,7 @@ import WithClass from '../../hoc/WithClass/WithClass';
 
 
 export default (props) => (
-    <WithClass classes="courses">
+    <WithClass classes="courses courses__home">
 
         <WithClass classes="row">
             {
