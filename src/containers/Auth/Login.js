@@ -14,16 +14,6 @@ const Login = (props) => {
     const [password, setPass] = useInputState('');
 
     
-
-    // const handleEmailChange = (e) => {
-
-    //     setEmail(e.target.value);
-
-    // }
-
-    // const handlePassChange = (e) => {
-    //     setPass(e.target.value);
-    // }
     const loginHandler = (e) => { 
         e.preventDefault()
         props.login(email , password);    
