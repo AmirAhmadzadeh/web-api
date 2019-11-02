@@ -4,7 +4,9 @@
 .courses{ 
     transform: translateY(45rem);
     padding-top: 10rem;
-
+    &__home{ 
+       transform: translateY(0) ;   
+    }
     &__item{
         
         max-height: 40rem;
@@ -14,6 +16,7 @@
         transition: all .1s ;
         border-radius: 20% ;   
         margin-bottom: 2.5rem; 
+        background-color: #fff ; 
         &:hover{
             cursor: pointer ;
             box-shadow: 0 1rem 8.5px rgba(#d70d59,.1) ;
