@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Button } from '@material-ui/core';
+import Translate from 'react-translate-component' ; 
+
 const authenticateButton = (props) => {
   return (
     <div className="navigation__authButtons">
@@ -13,7 +15,8 @@ const authenticateButton = (props) => {
           title=""
           color="secondary"
           className="button button__transparent academy__header-searchBar--button navigation__authButtons--panleButton">
-            پنل مدیریت
+               
+            <Translate content="Navigation.panelBtn" component="span" />
                </Button>
           <Button
             onClick={props.logout}
@@ -21,8 +24,9 @@ const authenticateButton = (props) => {
             color="secondary"
             variant='fab'
             className="button  academy__header-searchBar--button navigation__authButtons--panleButton">
+            <Translate content="Navigation.logoutBtn" component="span" />
 
-            خروج
+            
                     </Button>
 
         </aux>)
@@ -30,7 +34,8 @@ const authenticateButton = (props) => {
           title=""
           onClick={props.authClicked}
           className="button button__yellow button__radios academy__header-searchBar--button">
-          ورود و ثبت نام
+            <Translate content="Navigation.authBtn" component="span" />
+              
                </Button>
       }
 

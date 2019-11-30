@@ -15,8 +15,7 @@ import Accessinfo from '../AccessInfo/AccessInfo'
 import useValue from '../../../hooks/useValue';
 
 import useEpisode from '../../../hooks/useEpisode';
-
-
+import Translate from 'react-translate-component' ; 
 
 function CouresDetail(props) {
 
@@ -44,7 +43,7 @@ function CouresDetail(props) {
 
   function registerCourse() {
 
-    props.registerCourse();
+     props.registerCourse();
 
   }
   function getTheTypeOfCourse(t) {
@@ -250,44 +249,26 @@ function CouresDetail(props) {
   function getTabContent() {
 
     switch (value) {
-
       case 0:
-        // episodes Info : 
-
         return getEpisodesInfo();
-
       case 1:
-        // describe COurse  
-
         return (
-
           <div className="course__descriptions">
-
             {props.data ? ReactHtmlParser(props.data.body) : "Loading..."}
-
-
           </div>
         )
-
       case 2:
-
-        // comments 
-
         return (
-
           <CourseComments data={props.data} auth={props.auth} sendComment={props.sendComment} />
-
         )
-
       default:
-
         break;
     }
   }
 
   function getAccessInfoAllert() {
 
-    if (props.auth && props.canUseCourse) {
+    if (props.auth && !props.canUseCourse) {
 
       switch (props.data.type) {
 
@@ -299,9 +280,9 @@ function CouresDetail(props) {
 
               registerCourse={registerCourse}
 
-              buttonText=" ثبت نام در دوره"
+              buttonText={<Translate content="freeCourseAccess.buyBtn"  />}
 
-              accessTxt="این دوره رایگان است"
+              accessTxt={<Translate content="freeCourseAccess.accessTxt"  />}
             />
           );
 
@@ -312,9 +293,9 @@ function CouresDetail(props) {
 
               registerCourse={registerCourse}
 
-              buttonText=" تهیه ی عضویت ویژه"
+              buttonText={<Translate content="vipCourseAccess.buyBtn"  />}
 
-              accessTxt="برای دسترسی به این دوره باید عضویت ویژه داشته باشید"
+              accessTxt={<Translate content="vipCourseAccess.accessTxt"  />}
             />
 
           );
@@ -327,9 +308,9 @@ function CouresDetail(props) {
 
               registerCourse={registerCourse}
 
-              buttonText="خرید وثبت نام در دوره"
+              buttonText={<Translate content="cashCourseAccess.buyBtn"  />}
 
-              accessTxt=" این دوره نقدی است"
+              accessTxt={<Translate content="cashCourseAccess.accessTxt"  />}
             />
           );
 
@@ -337,12 +318,12 @@ function CouresDetail(props) {
     }
     else if (props.canUseCourse) {
 
-      return 'شما برای همیشه به این دوره دسترسی دارید!! ';
+      return <Translate content="courseAccessInfo.accessAllTheTime" />;
 
     }
     else {
 
-      return 'برای مشاهده ی جزییات لطفا واردسایت شوید ';
+      return <Translate content="courseAccessInfo.forAccessLogin" />;
 
     }
   }
@@ -351,84 +332,51 @@ function CouresDetail(props) {
 
     if (props.data) {
 
-      let accessInfo = getAccessInfoAllert();
 
       return (
 
         <React.Fragment>
-
           <header className="course__header">
-
             <h1 className="heading__first margin_bottom_min course__title">
-
               {props.data.title}
-
             </h1>
-
           </header>
-
           <div className="course__imageContainer margin_bottom_min">
-
-            <img className="course__image" src={`http://localhost:8080/${props.data.file}`} />
-
+            <img className="course__image" src={`${props.data.file}`} />
           </div>
-
           <div className="course__accessInfo">
-
-            {accessInfo}
-
+            {getAccessInfoAllert()}
           </div>
-
           <section className="course__details">
-
             <Tabs
               value={value}
-
               onChange={handleChange}
-
               indicatorColor="primary"
-
               textColor="primary"
-
               centered
             >
-
-              <Tab label="جلسات" className="tab" />
-
-              <Tab label="توضیحات" className="tab" />
-
-              <Tab label="نظرات" className="tab" />
-
+              <Tab label={<Translate content="courseDetails.sectionsTab"/>} className="tab" />
+              <Tab label={<Translate content="courseDetails.describe"/>} className="tab" />
+              <Tab label={<Translate content="courseDetails.comments"/>} className="tab" />
             </Tabs>
-
             <div className="course__details-area">
-
-              {tabsConetnt}
-
+              { getTabContent() }
             </div>
-
           </section>
-
         </React.Fragment>
       );
     } else {
-
       return "Loading ...."; // soon add spinner 
-
     }
   }
 
 
-  const tabsConetnt = getTabContent()
-
-  const content = getContent()
+  
 
   return (
 
     <div className="courses__details">
-
-      {content}
-
+      {getContent()}
     </div>
   )
 

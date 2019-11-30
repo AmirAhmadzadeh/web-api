@@ -24,7 +24,7 @@ export default (props) => {
 
                 className="courses__item-image"
 
-                src={"http://localhost:8080/" + props.data.file}
+                src={props.data.file}
             />
 
 

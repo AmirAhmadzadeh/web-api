@@ -43,6 +43,9 @@ import WithClass from '../../hoc/WithClass/WithClass';
 
 import useSinglePageCourse from '../../hooks/useSinglePageCourse'
 
+import Translate from 'react-translate-component' ;
+
+
 function Academy(props) {
 
   const [showSinglePageCourse, setShowSinglePageCourse] = useSinglePageCourse(false);
@@ -108,7 +111,7 @@ function Academy(props) {
 
             <h1 className="heading__first" >
 
-              دوره های آموزشی
+               <Translate content="title" /> 
 
                  </h1>
 
@@ -191,9 +194,11 @@ function Academy(props) {
 
             <div className="academy__header--logo-brand">
 
-              <h2 className="academy__header--logo-brand-1 heading__first"> آکادمی امیر</h2>
+              <h2 className="academy__header--logo-brand-1 heading__first"> <Translate content="topHeader.title"/></h2>
 
-              <h1 className="academy__header--logo-brand-sub  headin__secondary">آموزش ۰ تا۱۰۰ طراحی وب</h1>
+              <h1 className="academy__header--logo-brand-sub  headin__secondary">
+              <Translate content="topHeader.subTitle"/>
+              </h1>
 
             </div>
 

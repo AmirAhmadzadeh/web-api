@@ -13,6 +13,10 @@ import Courses from './../../components/Courses/Courses';
 import WithClass from '../../hoc/WithClass/WithClass';
 import CourseDetial from '../../components/Courses/CourseDetails/CouresDetail';
 
+
+
+
+
 function home(props) {
   const [authPage, setAuth] = useBooleanState(false);
   const [showCoursePage, setShowSinglePageCourse] = useBooleanState(false);
@@ -22,6 +26,7 @@ function home(props) {
     loadUserData();
     loadCourses();
   }, []);
+
   const canUseCourse = useSelector(state => state.academy.canUseCourse)
   const menus = useSelector(state => state.home.menus);
   const auth = useSelector(state => state.auth);
@@ -94,4 +99,8 @@ function home(props) {
     </div>
   )
 }
+
+
 export default withRouter(home); 
+
+

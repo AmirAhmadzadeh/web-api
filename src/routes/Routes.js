@@ -10,8 +10,8 @@ import Panel from '../containers/Panel/Panel';
 export default function(){
     return (
         <Switch>
-            <Route path='/amir-admin'  />
-            <Route path="/courses" component={Academy} />
+            {/* <Route path='/amir-admin'  /> */}
+            <Route path="/academy" component={Academy} />
             <Route path="/auth" component={Auth} />
             <Route path="/panel" component={Panel} />
             <Route path="/" exact component={Home} />
