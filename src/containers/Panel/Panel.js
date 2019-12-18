@@ -7,7 +7,7 @@ export default class Panel extends Component {
   render() {
     return (
       <WithClass>
-          ** Panel **
+          ** Management Panel **
       </WithClass>
     )
   }
