@@ -1,19 +1,11 @@
 import React, { useEffect } from 'react';
-
 import { IconButton, Tabs, Tab } from '@material-ui/core';
-
 import { FaCloudDownloadAlt } from 'react-icons/fa';
-
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
-
 import ReactHtmlParser from 'react-html-parser';
-
 import CourseComments from '../CourseComments/CourseComments';
-
 import Accessinfo from '../AccessInfo/AccessInfo'
-
 import useValue from '../../../hooks/useValue';
-
 import useEpisode from '../../../hooks/useEpisode';
 import Translate from 'react-translate-component' ; 
 
@@ -275,13 +267,9 @@ function CouresDetail(props) {
         case 'free':
 
           return (
-
             <Accessinfo
-
               registerCourse={registerCourse}
-
               buttonText={<Translate content="freeCourseAccess.buyBtn"  />}
-
               accessTxt={<Translate content="freeCourseAccess.accessTxt"  />}
             />
           );
@@ -305,11 +293,8 @@ function CouresDetail(props) {
           return (
 
             <Accessinfo
-
               registerCourse={registerCourse}
-
               buttonText={<Translate content="cashCourseAccess.buyBtn"  />}
-
               accessTxt={<Translate content="cashCourseAccess.accessTxt"  />}
             />
           );
@@ -317,24 +302,16 @@ function CouresDetail(props) {
       }
     }
     else if (props.canUseCourse) {
-
       return <Translate content="courseAccessInfo.accessAllTheTime" />;
-
     }
     else {
-
       return <Translate content="courseAccessInfo.forAccessLogin" />;
-
     }
   }
 
   function getContent() {
-
     if (props.data) {
-
-
       return (
-
         <React.Fragment>
           <header className="course__header">
             <h1 className="heading__first margin_bottom_min course__title">
@@ -371,7 +348,6 @@ function CouresDetail(props) {
   }
 
 
-  
 
   return (
 
